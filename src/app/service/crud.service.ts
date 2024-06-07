@@ -10,7 +10,7 @@ export class CrudService {
   serviceUrl : string;
 
   constructor(private http : HttpClient) { 
-    this.serviceUrl = "http://localhost:3000/tasks";
+    this.serviceUrl = "https://json-deployement.onrender.com/tasks";
   }
 
   addTask(task : Task) : Observable<Task>{

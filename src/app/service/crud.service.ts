@@ -18,7 +18,9 @@ export class CrudService {
   }
   
   getAllTasks() : Observable<Task[]>{
-    return this.http.get<Task[]>(this.serviceUrl);
+    const timestamp = new Date().getTime();
+    const url = `${this.serviceUrl}?timestamp=${timestamp}`;
+    return this.http.get<Task[]>(url);
   }
 
   deleteTask(task : Task) : Observable<Task>{

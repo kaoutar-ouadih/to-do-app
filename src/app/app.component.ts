@@ -39,6 +39,7 @@ export class AppComponent implements OnInit{
     this.crudService.getAllTasks().subscribe(
       res =>{
         this.tasks = res;
+        console.log(this.tasks);
         this.numberOfTasksLeft = this.tasks.length - this.tasks.filter((item)=>{
           return item.isCompleted;
         }).length;
